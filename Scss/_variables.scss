@@ -4,9 +4,10 @@ $color-azul: rgb(0, 0, 182);
 $color-negro: #000000;
 $color-blanco: #ffffff;
 $color-amarillo: yellow;
+$color-verde: green;
 //Fuentes
 $font-title: "Arial", serif;
-
+$font-title-cival: "Lucida";
 //SuperVariable (Puede traer variables dentro de las herencias)
 //Herencia
 %base-title{
@@ -14,4 +15,13 @@ $font-title: "Arial", serif;
     color: $color-negro;
     display: flex;
     font-size: 30px;
+}
+
+%titulo-cival{
+    font-family: $font-title-cival;
+    font-size: 40px;
+    color: $color-verde;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
 }

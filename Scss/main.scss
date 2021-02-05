@@ -6,3 +6,38 @@
 .barraDeNavegacion{
     @extend %base-title;
 }
+
+.process{
+    margin-bottom: 25px;
+    & > div{
+        & > h3{
+            color: $color-amarillo;
+            margin-bottom: 0;
+            font-size: 30px;
+            font-weight: 500;
+        }
+        & > p{
+            color: $color-blanco;
+            margin: 0;
+        }
+    }
+}
+
+section{
+    & >article{
+        & > .tituloCival{
+            background-color: $color-blanco;
+            @extend %titulo-cival;
+            
+        }
+    }
+}
+
+.footer{
+    background-color: $color-negro;
+    height: 10em;
+    margin: 0;
+    & > div{
+        background-color: $color-rojo;
+    }
+}

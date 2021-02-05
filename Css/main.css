@@ -4,5 +4,34 @@
   display: flex;
   font-size: 30px; }
 
+section > article > .tituloCival {
+  font-family: "Lucida";
+  font-size: 40px;
+  color: green;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center; }
+
 body {
   background-color: #0000b6; }
+
+.process {
+  margin-bottom: 25px; }
+  .process > div > h3 {
+    color: yellow;
+    margin-bottom: 0;
+    font-size: 30px;
+    font-weight: 500; }
+  .process > div > p {
+    color: #ffffff;
+    margin: 0; }
+
+section > article > .tituloCival {
+  background-color: #ffffff; }
+
+.footer {
+  background-color: #000000;
+  height: 10em;
+  margin: 0; }
+  .footer > div {
+    background-color: #ff0000; }
