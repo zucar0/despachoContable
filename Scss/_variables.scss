@@ -1,0 +1,17 @@
+//Colores
+$color-rojo: #ff0000;
+$color-azul: rgb(0, 0, 182);
+$color-negro: #000000;
+$color-blanco: #ffffff;
+$color-amarillo: yellow;
+//Fuentes
+$font-title: "Arial", serif;
+
+//SuperVariable (Puede traer variables dentro de las herencias)
+//Herencia
+%base-title{
+    font-family: $font-title;
+    color: $color-negro;
+    display: flex;
+    font-size: 30px;
+}

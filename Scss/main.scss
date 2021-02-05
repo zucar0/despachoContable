@@ -1,5 +1,8 @@
-@import './footer';
-@import './header';
-@import './main';
-@import './variables';
-@import './global';
+@import './_footer';
+@import './_header';
+@import './_variables';
+@import './_global';
+
+.barraDeNavegacion{
+    @extend %base-title;
+}
