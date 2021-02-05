@@ -1,0 +1,23 @@
+{
+  "name": "proyectodespacho",
+  "version": "1.0.0",
+  "description": "Proyecto CREPSA",
+  "main": "app.js",
+  "scripts": {
+    "scss": "node-sass --watch scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zucar0/despachoContable.git"
+  },
+  "author": "Antonio Enríquez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zucar0/despachoContable/issues"
+  },
+  "homepage": "https://github.com/zucar0/despachoContable#readme",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "node-sass": "^5.0.0"
+  }
+}
