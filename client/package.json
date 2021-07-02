@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "1.0.0",
-  "description": "",
+  "description": "Despacho Contable del lado del cliente",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
