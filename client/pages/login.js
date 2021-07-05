@@ -1,43 +1,49 @@
 import firebase from "../firebase";
 import {useState} from 'react';
 import { useRouter } from "next/router";
+import LoginRegisterForm from "../components/LoginRegisterForm"
+import { toast } from 'react-toastify';
+
 const Login = () => {
-    const [email, setEmail] = useState('')
-    const [pass, setPass] = useState('')
+    const [loginEmail, setLoginEmail] = useState('')
+    const [loginPass, setLoginPass] = useState('')
+    const [registerEmail, setRegisterEmail] = useState('')
+    const [registerPass, setRegisterPass] = useState('')
     const router = useRouter();
     //Funcion para registro
-    const register = () => {    }
+    const register = async () => { 
+        // console.log(registerEmail, registerPass)
+        await firebase.auth().createUserWithEmailAndPassword(registerEmail, registerPass)
+        .then((user) => {
+            console.log("REGISTER", user);
+            toast('El registro fue exitoso')
+        })
+        .catch((err) =>{
+            console.log(err)
+            toast(err.message)
+        })
+    }
     //Funcion para el login
-    const login = () => {    }
+    const login = async () => {    
+        // console.log(loginEmail, loginPass)
+        await firebase.auth().signInWithEmailAndPassword(loginEmail, loginPass)
+        .then((user) =>{
+            console.log('LOGIN', user)
+            toast('Bienvenido')
 
-    const loginRegisterForm = (buttonName) => (
-        <div className="col-md-6">
-                {/* Email */}
-                <div className="form-group">
-                    <label>Email</label>
-                    <input type="email" onChange={e => setEmail(e.target.value)} value={email} className="form-control"/>
-                    <small>Nunca compartiremos tu email con terceros</small>
-                </div>
-                {/* Password */}
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" onChange={e => setPass(e.target.value)} value={pass} className="form-control"/>
-                </div>
-                {/* Botón */}
-                <div> 
-                    <button onClick={register} className="btn btn-primary mt-4">
-                        {buttonName}
-                    </button>
-                </div>
-            </div>
-    )
+        })
+        .catch((err) =>{
+            console.log(err)
+            toast(err.message)
+        })
+    }
 
     return(
         <div className="container">
             <h2 className="text-center pt-4 display-4 mb-4">Login/Registro</h2>
             <div className="row">
-                {loginRegisterForm('Login')}
-                {loginRegisterForm('Regístrate')}
+                <LoginRegisterForm email={loginEmail} setEmail={setLoginEmail} pass={loginPass} setPass={setLoginPass} handleSubmit={login} buttonName="Login" />
+                <LoginRegisterForm email={registerEmail} setEmail={setRegisterEmail} pass={registerPass} setPass={setRegisterPass} handleSubmit={register} buttonName="Registro" />
             </div>
         </div>
     )
