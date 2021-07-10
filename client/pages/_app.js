@@ -5,6 +5,8 @@ import {Provider} from '../context';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import FirebaseAuthState from '../components/FirebaseAuthState';
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+
 
 export default function MyApp({ Component, pageProps }) {
     return(
